@@ -17,8 +17,22 @@ public class BubbleSort implements Sort {
      * {@inheritDoc}
      */
     public void sort(int[] array) {
+        /*Внешний цикл каждый раз сокращает фрагмент массива, 
+      так как внутренний цикл каждый раз ставит в конец
+      фрагмента максимальный элемент*/  
+    for (int i = array.length-1; i>0; i--) 
+         for (int j = 0; j < i; j++) 
+         if (array[j] > array[j+1]){ 
+              /*Сравниваем элементы попарно, 
+              если они имеют неправильный порядок, 
+              то меняем местами*/
+               
+            int tmp = array[j];
+            array[j] = array[j+1];
+            array[j+1] = tmp;
         /*
          * TODO(Студент): Реализовать метод sort класса BubbleSort
          */
     }
+}
 }

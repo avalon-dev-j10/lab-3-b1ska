@@ -21,6 +21,31 @@ public class ShellSort implements Sort {
      * {@inheritDoc}
      */
     public void sort(int[] array) {
+        //сортировка Шелла с последовательностью Кунта 
+       int h = 1;
+            while (h*3 < array.length)
+            h = h * 3 + 1;
+       
+            while(h >= 1){
+            hSort(array, h);
+            h = h/3;
+        }
+    }
+
+    private void hSort(int[] array, int h) {
+        
+        for (int i = h; i < array.length; i++) {
+            for (int j = i; j >= h; j = j - h) {
+                if (array[j] < array[j - h]){
+                    array[j] = array[j] - h;
+                }
+                else
+                    break;
+            }
+        }
+        
+        
+        
         /*
          * TODO(Студент): Реализовать метод sort класса ShellSort
          */

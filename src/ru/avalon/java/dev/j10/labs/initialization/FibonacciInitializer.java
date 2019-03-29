@@ -1,6 +1,7 @@
 package ru.avalon.java.dev.j10.labs.initialization;
 
 import ru.avalon.java.dev.j10.labs.Initializer;
+import java.util.Random;
 
 /**
  * Класс, выполняющий инициализацию массива числе,
@@ -26,7 +27,17 @@ public class FibonacciInitializer implements Initializer {
      *
      * @param array массив, подлежащий инициализации
      */
+    @Override
     public void initialize(int[] array) {
+        
+        Random selecter = new Random();
+                                       
+       for (int i = 2; i <=array.length-1;i++){    //Инициализируем массив числами Фибоначи
+        array[0] = selecter.nextInt(2);    //рандомно присавиваем первый элемент либо 0 либо 1
+        array[1] = 1;
+        array[i]=array[i-1]+array[i-2];  
+                 }
+  
         /*
          * TODO(Студент): Реализовать метод initialize класса FibonacciInitializer
          */
