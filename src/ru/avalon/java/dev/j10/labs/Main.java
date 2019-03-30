@@ -6,8 +6,24 @@ import java.util.Arrays;
 
 public class Main {
 
+    
+    public static void printArray(int[] array){
+        for(int i =0; i<array.length;i++){
+          System.out.print(array[i]+" ");
+         }
+                }
+    
     public static void main(String[] args) {
+        
+        
+        
+        
+        
+    
+        
         int[] array = new int[20];
+        
+        
         
         //инициализируем массив числами фибоначи и выводим сумму
         FibonacciInitializer fibo = new FibonacciInitializer();
@@ -20,20 +36,16 @@ public class Main {
         RandomInitializer random1 = new RandomInitializer();
         random1.initialize(array);
         System.out.println();
-        System.out.println("Сумма рандомного Массива 1 равна:"+Arrays.stream(array).sum());
-        System.out.println();
-        System.out.println("Рандомный Массив 1 до сортировки:");
-        for(int i =0; i<array.length;i++){
-            System.out.print(array[i]+" ");
-        }
+        printArray(array);
+        
+        
         //сортируем массив 1 методом сортировки "Пузырьком"
         BubbleSort sortirovkaBubble = new BubbleSort();
         sortirovkaBubble.sort(array);
         System.out.println();
         System.out.println("Рандомный Массив 1 после сортировки Пузырьком");
-	for(int i =0; i<array.length;i++){
-            System.out.print(array[i]+" ");
-        }
+        printArray(array);
+	
         
         //сортируем массив 2 методом сортировки выбором
         RandomInitializer random2 = new RandomInitializer();
@@ -42,9 +54,9 @@ public class Main {
         selectSort.sort(array);
         System.out.println();
         System.out.println("Рандомный Массив 2 сортировки с использованием сортровки выбором");
-	for(int i =0; i<array.length;i++){
-            System.out.print(array[i]+" ");
-        }
+	printArray(array);
+        
+        
         //сортируем массив 3 методом сортировки Шелла
         RandomInitializer random3 = new RandomInitializer();
         random1.initialize(array);
@@ -52,13 +64,10 @@ public class Main {
         selectSort.sort(array);
         System.out.println();
         System.out.println("Рандомный Массив 3 сортировки с использованием сортировки Шелла");
-	for(int i =0; i<array.length;i++){
-            System.out.print(array[i]+" ");
-        }
-         System.out.println();
-          }
+	printArray(array);
         
         }
+}
       //  System.out.println(fibo.initialize);
 	    /*
 	     * TODO(Студент): Выполнить действия над массивом чисел
